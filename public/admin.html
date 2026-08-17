@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>管理后台 · 问卷记录</title>
+    <title>管理后台 · 意见记录</title>
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3C/svg%3E"
@@ -15,7 +15,7 @@
 
     <header class="topbar">
       <div class="brand"><span class="logo-dot"></span> 科普调研中心 · 管理后台</div>
-      <a class="login-link" href="/">返回问卷</a>
+      <a class="login-link" href="/">返回意见页</a>
     </header>
 
     <main class="page">
@@ -39,9 +39,9 @@
       <!-- 数据视图 -->
       <section id="dashView" class="card dash-card" style="display: none">
         <div class="dash-head">
-          <h2>问卷提交记录 <span class="count" id="count"></span></h2>
+          <h2>意见提交记录 <span class="count" id="count"></span></h2>
           <div class="dash-actions">
-            <input type="text" id="search" placeholder="按姓名搜索…" />
+            <input type="text" id="search" placeholder="搜索意见内容…" />
             <button id="exportBtn" class="btn-ghost">导出 CSV</button>
             <button id="logoutBtn" class="btn-ghost">退出登录</button>
           </div>
@@ -51,11 +51,6 @@
             <thead>
               <tr>
                 <th>提交时间</th>
-                <th>姓名</th>
-                <th>年龄</th>
-                <th>职业</th>
-                <th>满意度</th>
-                <th>使用效果</th>
                 <th>意见</th>
               </tr>
             </thead>
