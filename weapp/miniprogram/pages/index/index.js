@@ -10,6 +10,10 @@ Page({
     this.setData({ opinion: e.detail.value });
   },
 
+  goAdmin() {
+    wx.navigateTo({ url: '/pages/admin/admin' });
+  },
+
   async onSubmit() {
     if (this.data.submitting) return;
     const content = (this.data.opinion || '').trim();
