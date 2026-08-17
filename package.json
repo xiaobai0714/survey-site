@@ -1,0 +1,13 @@
+{
+  "name": "survey-site",
+  "version": "1.1.0",
+  "private": true,
+  "description": "美观简约的用户体验调查问卷网站，含管理员后台（Node 后端 + 静态前端）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
