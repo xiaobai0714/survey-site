@@ -1,0 +1,21 @@
+<view class="container">
+  <view class="card">
+    <view class="hero">
+      <view class="hero-title">欢迎留下你的意见</view>
+      <view class="hero-sub">你的反馈对我们很重要，全程匿名收集</view>
+    </view>
+    <view class="field">
+      <textarea
+        class="opinion"
+        placeholder="在这里写下你的意见或建议（选填，可留空直接提交）"
+        value="{{opinion}}"
+        bindinput="onInput"
+        maxlength="500"
+        auto-height
+      />
+    </view>
+    <button class="submit-btn" bindtap="onSubmit" loading="{{submitting}}">提交意见</button>
+    <view class="msg {{msgType}}" wx:if="{{msg}}">{{msg}}</view>
+  </view>
+  <view class="footer">本页面为匿名收集，不会记录任何个人信息</view>
+</view>
