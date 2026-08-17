@@ -1,0 +1,95 @@
+.card {
+  padding: 40rpx 36rpx;
+}
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16rpx;
+  margin-bottom: 28rpx;
+}
+.title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #2b2f44;
+  flex: 1;
+  min-width: 200rpx;
+}
+.search {
+  flex: 1;
+  min-width: 200rpx;
+  height: 72rpx;
+  background: #f5f7fb;
+  border: 2rpx solid #e6e9f2;
+  border-radius: 999rpx;
+  padding: 0 28rpx;
+  font-size: 28rpx;
+  color: #2b2f44;
+}
+.logout {
+  background: #f0f2f8;
+  color: #6b7090;
+  font-size: 26rpx;
+  margin: 0;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+.item {
+  background: #f8f9fd;
+  border-radius: 18rpx;
+  padding: 24rpx 26rpx;
+  border-left: 8rpx solid #6c8cff;
+}
+.time {
+  font-size: 24rpx;
+  color: #9aa0b8;
+  margin-bottom: 10rpx;
+}
+.content {
+  font-size: 30rpx;
+  color: #2b2f44;
+  line-height: 1.6;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+.empty {
+  text-align: center;
+  color: #aab0c6;
+  font-size: 28rpx;
+  padding: 60rpx 0;
+}
+
+/* 登录态 */
+.login-title {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #2b2f44;
+  text-align: center;
+  margin-bottom: 36rpx;
+}
+.pwd {
+  width: 100%;
+  height: 88rpx;
+  background: #f5f7fb;
+  border: 2rpx solid #e6e9f2;
+  border-radius: 16rpx;
+  padding: 0 28rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  margin-bottom: 28rpx;
+}
+.login-btn {
+  background: linear-gradient(135deg, #6c8cff, #9b7bff);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  border-radius: 999rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+}
+.login-btn::after {
+  border: none;
+}
