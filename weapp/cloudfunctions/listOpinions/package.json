@@ -1,0 +1,9 @@
+{
+  "name": "listOpinions",
+  "version": "1.0.0",
+  "description": "管理员查看意见列表",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}
