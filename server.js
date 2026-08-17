@@ -121,7 +121,7 @@ const server = http.createServer(async (req, res) => {
   const method = req.method;
 
   try {
-    // 提交问卷（普通用户，无需登录）
+    // 提交意见（匿名，无需登录，全部选填）
     if (pathname === '/api/submit' && method === 'POST') {
       const body = await readBody(req);
       let data;
@@ -130,23 +130,12 @@ const server = http.createServer(async (req, res) => {
       } catch (e) {
         return sendJSON(res, 400, { error: '数据格式错误' });
       }
-      const { name, age, occupation, satisfaction, effect, opinion } = data;
-      if (!name || !age || !occupation || !satisfaction || !effect) {
-        return sendJSON(res, 400, { error: '请填写所有必填项（姓名、年龄、职业、满意度、使用效果）' });
-      }
-      const numericAge = Number(age);
-      if (!Number.isFinite(numericAge) || numericAge <= 0 || numericAge > 150) {
-        return sendJSON(res, 400, { error: '请填写有效的年龄' });
-      }
+      // 匿名收集：仅保存意见文本，无任何必填项
+      const opinion = data.opinion ? String(data.opinion).slice(0, 2000) : '';
       const list = readSubmissions();
       const entry = {
         id: crypto.randomUUID(),
-        name: String(name),
-        age: String(age),
-        occupation: String(occupation),
-        satisfaction: Math.min(5, Math.max(1, Number(satisfaction))),
-        effect: String(effect),
-        opinion: opinion ? String(opinion) : '',
+        opinion,
         submittedAt: new Date().toISOString()
       };
       list.push(entry);
