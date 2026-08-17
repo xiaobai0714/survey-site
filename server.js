@@ -206,6 +206,6 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => {
-  console.log(`✅ 问卷网站已启动: http://localhost:${PORT}`);
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`✅ 问卷网站已启动: http://0.0.0.0:${PORT}`);
 });
