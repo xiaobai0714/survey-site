@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/admin/admin"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#6c8cff",
+    "navigationBarTitleText": "意见收集",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#eef1f8"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "cloud": true
+}
