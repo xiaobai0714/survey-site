@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>用户体验调查问卷</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366f1'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="bg-decor"></div>
+
+    <header class="topbar">
+      <div class="brand"><span class="logo-dot"></span> 科普调研中心</div>
+      <a class="login-link" href="/admin.html">管理员登录</a>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <p class="eyebrow">SURVEY</p>
+        <h1>用户体验调查问卷</h1>
+        <p class="subtitle">
+          感谢您参与我们的调研，您的反馈将帮助我们把产品做得更好。<br />
+          带 <span class="req">*</span> 的为必填项，大约只需 1 分钟即可完成。
+        </p>
+      </section>
+
+      <section class="card form-card">
+        <form id="surveyForm" novalidate>
+          <div class="field">
+            <label for="name">姓名 <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="请输入您的姓名" maxlength="40" />
+          </div>
+
+          <div class="field">
+            <label for="age">年龄 <span class="req">*</span></label>
+            <input type="number" id="age" name="age" placeholder="请输入年龄" min="1" max="150" />
+          </div>
+
+          <div class="field">
+            <label for="occupation">职业 <span class="req">*</span></label>
+            <input type="text" id="occupation" name="occupation" placeholder="如：学生 / 工程师 / 设计师" maxlength="40" />
+          </div>
+
+          <div class="field">
+            <label>满意度 <span class="req">*</span></label>
+            <div class="stars" id="stars">
+              <span data-v="1">★</span>
+              <span data-v="2">★</span>
+              <span data-v="3">★</span>
+              <span data-v="4">★</span>
+              <span data-v="5">★</span>
+            </div>
+            <input type="hidden" id="satisfaction" name="satisfaction" />
+            <div class="star-label" id="starLabel">请选择您的满意度</div>
+          </div>
+
+          <div class="field">
+            <label for="effect">使用效果 <span class="req">*</span></label>
+            <select id="effect" name="effect">
+              <option value="">请选择使用效果</option>
+              <option value="非常好">非常好</option>
+              <option value="好">好</option>
+              <option value="一般">一般</option>
+              <option value="差">差</option>
+              <option value="非常差">非常差</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="opinion">意见与建议 <span style="color: var(--muted); font-weight: 400">（选填）</span></label>
+            <textarea id="opinion" name="opinion" placeholder="欢迎留下您的任何想法～" maxlength="500"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">提交问卷</button>
+          <p id="msg" class="msg"></p>
+        </form>
+      </section>
+
+      <footer class="foot">© 2026 科普调研中心 · 您的意见对我们很重要</footer>
+    </main>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>
