@@ -27,18 +27,13 @@
     return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())}`;
   }
 
-  function starStr(n) {
-    n = Number(n) || 0;
-    return '★'.repeat(n) + '☆'.repeat(5 - n);
-  }
-
   function render() {
     const q = search.value.trim().toLowerCase();
-    const items = allItems.filter((it) => !q || String(it.name || '').toLowerCase().includes(q));
+    const items = allItems.filter((it) => !q || String(it.opinion || '').toLowerCase().includes(q));
     countEl.textContent = `共 ${items.length} 条`;
 
     if (!items.length) {
-      tbody.innerHTML = `<tr><td colspan="7" class="empty">暂无符合条件的问卷</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="2" class="empty">暂无符合条件的意见</td></tr>`;
       return;
     }
 
@@ -46,12 +41,7 @@
       .map(
         (it) => `<tr>
         <td>${fmt(it.submittedAt)}</td>
-        <td>${escapeHtml(it.name)}</td>
-        <td>${escapeHtml(it.age)}</td>
-        <td>${escapeHtml(it.occupation)}</td>
-        <td class="stars-cell">${starStr(it.satisfaction)}<br /><span style="color:#9ca3af;font-size:12px">${it.satisfaction}/5</span></td>
-        <td>${escapeHtml(it.effect)}</td>
-        <td>${it.opinion ? escapeHtml(it.opinion) : '<span style="color:#9ca3af">—</span>'}</td>
+        <td>${it.opinion ? escapeHtml(it.opinion) : '<span style="color:#9ca3af">（空）</span>'}</td>
       </tr>`
       )
       .join('');
@@ -143,16 +133,8 @@
 
   document.getElementById('exportBtn').addEventListener('click', () => {
     if (!allItems.length) return;
-    const headers = ['提交时间', '姓名', '年龄', '职业', '满意度', '使用效果', '意见'];
-    const rows = allItems.map((it) => [
-      fmt(it.submittedAt),
-      it.name,
-      it.age,
-      it.occupation,
-      it.satisfaction,
-      it.effect,
-      it.opinion || ''
-    ]);
+    const headers = ['提交时间', '意见'];
+    const rows = allItems.map((it) => [fmt(it.submittedAt), it.opinion || '']);
     const csv =
       '﻿' +
       [headers, ...rows]
@@ -161,7 +143,7 @@
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = '问卷记录.csv';
+    a.download = '意见记录.csv';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
