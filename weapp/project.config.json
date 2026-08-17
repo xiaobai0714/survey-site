@@ -1,13 +1,10 @@
 {
   "miniprogramRoot": "miniprogram/",
-  "cloudfunctionRoot": {
-    "cloudfunctions/": "cloud1-d7gcmmc7p4d1eb639"
-  },
+  "cloudfunctionRoot": "cloudfunctions/",
   "appid": "wxe64d8cdb39f751aa",
   "projectname": "opinion-collector",
-  "description": "匿名意见收集小程序（个人主体 + 微信云开发，0 成本）",
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -32,7 +29,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "latest",
+  "libVersion": "3.17.0",
   "simulatorPluginLibVersion": {},
   "packOptions": {
     "ignore": [],
