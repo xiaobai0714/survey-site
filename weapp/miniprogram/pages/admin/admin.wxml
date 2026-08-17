@@ -1,0 +1,42 @@
+<view class="container">
+  <block wx:if="{{!authed}}">
+    <view class="card">
+      <view class="login-title">管理员登录</view>
+      <input
+        class="pwd"
+        placeholder="请输入管理员密码"
+        value="{{password}}"
+        bindinput="onPwd"
+        password="{{true}}"
+        confirm-type="done"
+        bindconfirm="onLogin"
+      />
+      <button class="login-btn" bindtap="onLogin" loading="{{logging}}">登录</button>
+      <view class="msg err" wx:if="{{err}}">{{err}}</view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="card">
+      <view class="topbar">
+        <view class="title">意见列表（{{list.length}}）</view>
+        <input
+          class="search"
+          placeholder="搜索意见内容"
+          value="{{keyword}}"
+          bindinput="onSearch"
+          confirm-type="search"
+          bindconfirm="doSearch"
+        />
+        <button class="logout" size="mini" bindtap="onLogout">退出</button>
+      </view>
+      <view class="list">
+        <view class="item" wx:for="{{list}}" wx:key="_id">
+          <view class="time">{{item.timeText}}</view>
+          <view class="content">{{item.content || '(空)'}}</view>
+        </view>
+        <view class="empty" wx:if="{{list.length === 0}}">暂无意见</view>
+      </view>
+    </view>
+  </block>
+</view>
