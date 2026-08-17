@@ -6,8 +6,8 @@ App({
       return;
     }
     wx.cloud.init({
-      // 把下面的 'YOUR_ENV_ID' 替换成你在云开发控制台看到的环境 ID
-      env: 'YOUR_ENV_ID',
+      // 云开发环境 ID（来自云开发控制台）
+      env: 'cloud1-d7gcmmc7p4d1eb639',
       traceUser: true
     });
   }
