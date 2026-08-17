@@ -1,4 +1,5 @@
 <view class="container">
+  <view class="admin-entry" bindtap="goAdmin">管理员入口 ›</view>
   <view class="card">
     <view class="hero">
       <view class="hero-title">欢迎留下你的意见</view>
