@@ -1,0 +1,9 @@
+{
+  "name": "submitOpinion",
+  "version": "1.0.0",
+  "description": "提交匿名意见",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3"
+  }
+}
